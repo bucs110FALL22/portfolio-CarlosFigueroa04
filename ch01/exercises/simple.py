@@ -1,0 +1,15 @@
+print(10*5)
+print(10**2)
+print(15/10)
+print(-15//10)
+print(15%10)
+print(10%15)
+print(10%10)
+print(0%10)
+print(10/15)
+#
+rate = input("current Euro to dollar exchange rate:")
+amount = input("How much will be exchanged:")
+Total = (float(rate)*float(amount))
+result = Total- 3
+print(result)
