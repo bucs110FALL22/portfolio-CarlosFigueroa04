@@ -7,7 +7,7 @@ print(10%15)
 print(10%10)
 print(0%10)
 print(10/15)
-#
+#The float is repeating
 rate = input("current Euro to dollar exchange rate:")
 amount = input("How much will be exchanged:")
 Total = (float(rate)*float(amount))
