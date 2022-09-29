@@ -57,4 +57,4 @@ window.fill("red")
 
 	
 
-window.exitonclick()
+
