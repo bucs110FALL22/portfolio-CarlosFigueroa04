@@ -18,7 +18,7 @@ For each one below you should have a basic description of a program idea, a coup
 
 ## Project Idea 1
 
-< add your idea here >
+A program similar to photomath but instaed it is used fir scienece problems that involve numbers
 
 ## Project Idea 2
 
