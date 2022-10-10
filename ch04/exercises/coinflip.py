@@ -2,13 +2,29 @@ import turtle
 import random
 
 my_turtle = turtle.Turtle()
-
-my_turtle.color("blue")
+window = turtle.Screen
 my_turtle.shape("turtle")
-turns = my_turtle.left(90) or my_turtle.right(90)
-if i  in range(1,10):
-  my_turtle.forward(50)
-  
-  
 
+
+distance = 10
+angle = 90
+is_in_screen = True
+while is_in_screen:
+  coin= random.randrange(0, 2)
+  if coin:
+    my_turtle.left(angle)
+  else:
+    my_turtle.right(angle)
+  my_turtle.forward(distance)
+
+  turtlex = my_turtle.xcor()
+  turtley = my_turtle.ycor()
+
+  x_range = window.window_width()/2
+  y_range = window.window_width()/2
+
+  if abs(turtlex) > x_range or abs(turtley) > y_range:
+    is_in_range = False
+
+window.bgcolor("yellow")
 window.exitonclick()
