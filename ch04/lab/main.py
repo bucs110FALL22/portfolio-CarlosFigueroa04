@@ -53,11 +53,12 @@ print("Click on the rectangle of your choice!")
 exit_event = False
 while not exit_event:
     for event in pygame.event.get():
-        if event.type == pygame.MOUSEBUTTONDOWN: 
+        if event.type == pygame.MOUSEBUTTONDOWN:  # Click event
             if event.button == 1:
-                
-                if (event.pos[0] >= 50 and event.pos[0] <= 150 and event.pos[1] >= 150 and event.pos[1] <= 250) or (event.pos[0] >= 250 and event.pos[0] <= 350 and event.pos[1] >= 150 and event.pos[1] <= 250): 
-                  exit_event = True
+                #print("Mouse coordinates = ", event.pos)
+                if (event.pos[0] >= 50 and event.pos[0] <= 150 and event.pos[1] >= 150 and event.pos[1] <= 250) or (event.pos[0] >= 250 and event.pos[0] <= 350 and event.pos[1] >= 150 and event.pos[1] <= 250): # Make sure the user clicked inside a rectangle
+                    exit_event = True
+mouse_pos = event.pos
 #mouse_pos not defined not sure why
 pick_team = False
 while not pick_team:
@@ -86,10 +87,10 @@ for i in range (0, 10):
     distance_from_center = math.hypot(200 - dart1, 200 - dart2)
     is_in_circle = distance_from_center <= 200
     if is_in_circle == True:
-        dart_color = green
+        dart_color = Green
         green_score +=1
     else:
-        dart_color = red
+        dart_color = Red
     pygame.draw.circle(window, dart_color,(dart1,dart2),6)
     pygame.display.update()
     pygame.time.wait(500)
@@ -99,10 +100,38 @@ for i in range (0, 10):
     distance_from_center = math.hypot(200 - dart1, 200 - dart2)
     is_in_circle = distance_from_center <= 200
     if is_in_circle == True:
-        dart_color = white
+        dart_color = White
         white_score +=1
     else:
-        dart_color = black
+        dart_color = Black
     pygame.draw.circle(window, dart_color,(dart1,dart2),6)
     pygame.display.update()
     pygame.time.wait(500)
+
+
+
+print("")
+print("*** Final score ***")
+print("Green player: ", green_score)
+print("White player: ", white_score)
+print("")
+
+
+
+if green_score > white_score:
+    print("The green player has won")
+    if pick_team == 1:       # User chose the green player to win
+        print("Congratulation! Your player won!")
+    else:
+        print("Your player didn't win.  Better luck next time!")
+elif white_score > green_score:
+    print("The white player has won")
+    if pick_team == 2:       # User chose the white player to win
+        print("Congratulation! Your player won!")
+    else:
+            print("Your player didn't win.  Better luck next time!")
+else:
+    print("The game has ended in a tie")
+
+
+pygame.time.wait(10000)
