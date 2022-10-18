@@ -1,7 +1,7 @@
 import turtle
 
 turtle = turtle.Turtle()
-
+turtle.shape('turtle')
 def drawEQshape(num_sides , side_length):
   for i in range(num_sides):
     turtle.forward(side_length)
